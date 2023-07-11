@@ -45,9 +45,8 @@ const MachineList: React.FC<Props> = ({ category }) => {
     dispatch(addMachine(values))
   }
 
-  console.log('loop loop', machines)
   return (
-    <View className='mt-5 flex-1'>
+    <View className='mt-5'>
 
       <View className='flex-row justify-between items-center'>
         <PaperText className='font-extrabold text-lg uppercase' variant="titleMedium">{category.category_name}</PaperText>
@@ -61,6 +60,8 @@ const MachineList: React.FC<Props> = ({ category }) => {
       {machines.length > 0 && (
         <FlatList
           className='mt-5'
+          numColumns={2}
+          key={'_'}
           data={machines}
           renderItem={({ item }) => (
             <MachineFormCard machine={item} category={category} />

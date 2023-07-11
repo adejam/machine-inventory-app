@@ -31,7 +31,6 @@ const AttributeFieldSection: React.FC<Props> = ({ category, attribute, cat_machi
     dispatch(updateACategory({ ...updatedAttributeCategory }))
 
     if (cat_machines.length > 0 && input_name === "type") {
-      console.log('hgjhjhjhj hjhj hhjb bjjb')
       const asMachines = [...cat_machines]
       asMachines.forEach(mach => {
         const updatedMachine = { ...mach }

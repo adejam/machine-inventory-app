@@ -31,12 +31,15 @@ const ManageCategoriesScreen = () => {
         ) : (
           <FlatList
             className='flex-1'
+            numColumns={2}
+            key={'_'}
             data={categories}
             renderItem={({ item }) => (
               <CategoryFormCard category={item} />
             )}
             keyExtractor={(item) => item.category_id}
             showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ justifyContent: 'center' }}
           />
         )}
       </View>

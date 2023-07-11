@@ -69,7 +69,6 @@ const AttributeField: React.FC<Props> = ({ machine, category, machineField }) =>
       onChange={(value) => {
         if (typeof value !== undefined) {
           const val = value as unknown as AttributeFieldType
-          console.log(typeof val)
           handleMachineAttributeUpdate(val)
         }
       }}

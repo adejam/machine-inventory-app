@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { Dimensions, FlatList, Text, View } from 'react-native'
 import { Button, Card } from 'react-native-paper'
 import { useSelector } from 'react-redux'
 import { selectAllCategories } from '../../src/store/features/categoriesSlice'
@@ -17,7 +17,6 @@ interface IDashboardScreenNavigation {
 
 const DashboardScreen = ({ navigation }: IDashboardScreenNavigation) => {
   const categories = useSelector(selectAllCategories)
-  console.log(categories)
   return (
     <View className='flex-1 p-5'>
       {categories.length > 0 ? (

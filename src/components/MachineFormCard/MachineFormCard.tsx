@@ -28,7 +28,7 @@ const MachineFormCard: React.FC<Props> = ({ machine, category }) => {
   }
 
   return (
-    <>
+    <View className='sm:max-w-[450px] md:max-w-[500px] w-full'>
       <Card className='bg-white border-0 shadow m-2'>
         <Card.Title
           className='font-bold'
@@ -54,7 +54,7 @@ const MachineFormCard: React.FC<Props> = ({ machine, category }) => {
           </View>
         </Card.Content>
       </Card>
-    </>
+    </View>
   )
 }
 

@@ -23,7 +23,6 @@ const CategoryPage = ({ route, navigation }: ICategoryPageNavigation) => {
     })
   }, [category])
 
-  console.log('category_pagencbnc', category)
   return (
     <View className='p-5 flex-1'>
       <MachineList category={category} />
