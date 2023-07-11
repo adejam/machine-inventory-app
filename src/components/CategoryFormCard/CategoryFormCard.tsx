@@ -12,7 +12,6 @@ import AttributeFieldSection from './AttributeFieldSection'
 
 interface Props {
   category: ICategory
-  // categories: ICategory[]
 }
 
 const CategoryFormCard: React.FC<Props> = ({ category }) => {
@@ -59,7 +58,7 @@ const CategoryFormCard: React.FC<Props> = ({ category }) => {
   }
 
   return (
-    <View className='sm:max-w-[450px] md:max-w-[500px] w-full'>
+    <View className='sm:max-w-[450px] md:max-w-[500px] w-full mb-4'>
       <Card className='bg-white border-0 shadow m-2 '>
         <Card.Title
           title={category?.category_name || 'New Category'}

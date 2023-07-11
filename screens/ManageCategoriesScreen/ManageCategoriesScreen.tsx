@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, View } from 'react-native'
+import { Dimensions, FlatList, View } from 'react-native'
 import { Button } from 'react-native-paper'
 import { ScrollView, Text } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
@@ -30,8 +30,8 @@ const ManageCategoriesScreen = () => {
           <Text className='text-center text-gray-500'>No categories to display</Text>
         ) : (
           <FlatList
-            className='flex-1'
-            numColumns={2}
+            className='flex-1 mb-6'
+            numColumns={Dimensions.get('window').width > 900 ? 2 : 0}
             key={'_'}
             data={categories}
             renderItem={({ item }) => (
@@ -39,7 +39,6 @@ const ManageCategoriesScreen = () => {
             )}
             keyExtractor={(item) => item.category_id}
             showsVerticalScrollIndicator={false}
-            contentContainerStyle={{ justifyContent: 'center' }}
           />
         )}
       </View>

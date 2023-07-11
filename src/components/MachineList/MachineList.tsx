@@ -1,6 +1,6 @@
 import { nanoid } from '@reduxjs/toolkit'
 import React from 'react'
-import { FlatList, ScrollView, Text, View } from 'react-native'
+import { Dimensions, FlatList, View } from 'react-native'
 import { Button, Text as PaperText } from 'react-native-paper'
 import { useDispatch, useSelector } from 'react-redux'
 import { addMachine, selectMachineByCategoryId } from '../../store/features/machinesSlice'
@@ -11,15 +11,6 @@ import MachineFormCard from '../MachineFormCard'
 type Props = {
   category: ICategory
 }
-
-// IMachine {
-//   category_id: string
-//   machine_id: string
-//   machine_fields: {
-//     machine_field_id: string
-//     [x: string]: string | number | boolean | Date
-//   }[]
-// }
 
 const MachineList: React.FC<Props> = ({ category }) => {
   const machines = useSelector((state: RootState) => selectMachineByCategoryId(state, category.category_id))
@@ -59,8 +50,8 @@ const MachineList: React.FC<Props> = ({ category }) => {
       </View>
       {machines.length > 0 && (
         <FlatList
-          className='mt-5'
-          numColumns={2}
+          className='my-5'
+          numColumns={Dimensions.get('window').width > 900 ? 2 : 0}
           key={'_'}
           data={machines}
           renderItem={({ item }) => (

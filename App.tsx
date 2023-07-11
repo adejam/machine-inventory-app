@@ -32,6 +32,22 @@ const defaultScreenOptions = {
   headerRight: () => <DefaultHeaderRight />,
 }
 
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// const clearAsyncStorage = async () => {
+//   try {
+//     await AsyncStorage.clear();
+//     console.log('AsyncStorage cleared successfully.');
+//   } catch (error) {
+//     console.error('Error clearing AsyncStorage:', error);
+//   }
+// };
+
+// // Call the clearAsyncStorage function wherever you want to clear AsyncStorage
+// clearAsyncStorage();
+// clearAsyncStorage();
+// clearAsyncStorage();
+
 export default function App() {
   return (
     <Provider store={store}>
